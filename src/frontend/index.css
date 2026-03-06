@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Font Face Declarations ─────────────────────────────────── */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree[wght].woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    /* ─── Elevate Analytics Dark Theme ─────────────────────────── */
+    /* Deep midnight navy background */
+    --background: 0.12 0.018 252;
+    --foreground: 0.94 0.008 250;
+
+    /* Card surfaces — slightly lighter navy */
+    --card: 0.16 0.022 252;
+    --card-foreground: 0.94 0.008 250;
+
+    /* Popover */
+    --popover: 0.18 0.025 252;
+    --popover-foreground: 0.94 0.008 250;
+
+    /* Primary — electric cyan */
+    --primary: 0.75 0.16 204;
+    --primary-foreground: 0.08 0.02 252;
+
+    /* Secondary — soft slate */
+    --secondary: 0.22 0.025 252;
+    --secondary-foreground: 0.82 0.01 250;
+
+    /* Muted */
+    --muted: 0.19 0.022 252;
+    --muted-foreground: 0.52 0.02 250;
+
+    /* Accent — vivid cyan glow */
+    --accent: 0.22 0.035 204;
+    --accent-foreground: 0.78 0.16 204;
+
+    /* Destructive */
+    --destructive: 0.62 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    /* Borders and inputs */
+    --border: 0.26 0.025 252;
+    --input: 0.22 0.025 252;
+    --ring: 0.75 0.16 204;
+
+    /* Radius */
+    --radius: 0.75rem;
+
+    /* Chart palette — data-forward */
+    --chart-1: 0.75 0.16 204;
+    --chart-2: 0.68 0.18 155;
+    --chart-3: 0.82 0.14 86;
+    --chart-4: 0.72 0.18 285;
+    --chart-5: 0.65 0.19 24;
+
+    /* Sidebar */
+    --sidebar: 0.14 0.018 252;
+    --sidebar-foreground: 0.94 0.008 250;
+    --sidebar-primary: 0.75 0.16 204;
+    --sidebar-primary-foreground: 0.08 0.02 252;
+    --sidebar-accent: 0.22 0.025 252;
+    --sidebar-accent-foreground: 0.82 0.01 250;
+    --sidebar-border: 0.26 0.025 252;
+    --sidebar-ring: 0.75 0.16 204;
+
+    /* Custom Elevate tokens */
+    --glow-cyan: oklch(0.75 0.16 204 / 0.25);
+    --glow-strong: oklch(0.75 0.16 204 / 0.45);
+    --surface-glass: oklch(0.16 0.022 252 / 0.7);
+    --gradient-hero: linear-gradient(135deg, oklch(0.10 0.025 265) 0%, oklch(0.14 0.03 240) 50%, oklch(0.12 0.02 220) 100%);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.22 0.06 204 / 0.3), transparent),
+      radial-gradient(ellipse 50% 40% at 90% 60%, oklch(0.20 0.05 285 / 0.15), transparent);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, oklch(0.80 0.18 204) 0%, oklch(0.70 0.14 230) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-card {
+    box-shadow: 0 0 0 1px oklch(0.26 0.025 252), 0 4px 24px oklch(0.75 0.16 204 / 0.08);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glow-card:hover {
+    box-shadow: 0 0 0 1px oklch(0.75 0.16 204 / 0.4), 0 8px 40px oklch(0.75 0.16 204 / 0.15);
+  }
+
+  .glass-surface {
+    background: var(--surface-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid oklch(0.75 0.16 204 / 0.12);
+  }
+
+  .nav-blur {
+    background: oklch(0.12 0.018 252 / 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid oklch(0.26 0.025 252 / 0.8);
+  }
+
+  .feature-icon-bg {
+    background: linear-gradient(135deg, oklch(0.22 0.035 204 / 0.8), oklch(0.20 0.03 252 / 0.6));
+    border: 1px solid oklch(0.75 0.16 204 / 0.2);
+  }
+
+  .pricing-highlight {
+    background: linear-gradient(145deg, oklch(0.18 0.04 204 / 0.9), oklch(0.16 0.03 225 / 0.9));
+    border: 2px solid oklch(0.75 0.16 204 / 0.6);
+    box-shadow: 0 0 40px oklch(0.75 0.16 204 / 0.15), inset 0 1px 0 oklch(0.75 0.16 204 / 0.1);
+  }
+}
