@@ -1,11 +1,11 @@
 import { Toaster } from "@/components/ui/sonner";
-import ElevateAnalytics from "./pages/ElevateAnalytics";
+import PixelView from "./pages/PixelView";
 
 export default function App() {
   return (
     <>
-      <ElevateAnalytics />
-      <Toaster position="top-right" richColors />
+      <PixelView />
+      <Toaster position="top-center" theme="dark" />
     </>
   );
 }

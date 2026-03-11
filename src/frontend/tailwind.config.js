@@ -16,9 +16,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Bricolage Grotesque", "sans-serif"],
-        body: ["Figtree", "sans-serif"],
-        mono: ["Geist Mono", "monospace"],
+        display: ["JetBrains Mono", "monospace"],
+        body: ["Geist Mono", "monospace"],
+        mono: ["JetBrains Mono", "monospace"],
       },
       colors: {
         border: "oklch(var(--border))",
@@ -71,30 +71,30 @@ export default {
           border: "oklch(var(--sidebar-border))",
           ring: "oklch(var(--sidebar-ring))",
         },
-        // Custom Elevate brand tokens
-        cyan: {
-          glow: "oklch(0.75 0.16 204 / <alpha-value>)",
-          bright: "oklch(0.82 0.18 200)",
-          dim: "oklch(0.60 0.12 204)",
+        neon: {
+          cyan: "oklch(0.78 0.18 195)",
+          magenta: "oklch(0.65 0.25 335)",
+          yellow: "oklch(0.90 0.20 95)",
+          green: "oklch(0.80 0.20 145)",
         },
-        navy: {
-          deep: "oklch(0.10 0.025 265)",
-          mid: "oklch(0.14 0.022 252)",
-          light: "oklch(0.20 0.022 252)",
+        pixel: {
+          dark: "oklch(0.08 0.015 265)",
+          card: "oklch(0.12 0.020 265)",
+          border: "oklch(0.22 0.035 265)",
         },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-        xl: "calc(var(--radius) + 4px)",
-        "2xl": "calc(var(--radius) + 8px)",
       },
       boxShadow: {
-        xs: "0 1px 2px 0 rgba(0,0,0,0.05)",
-        glow: "0 0 20px oklch(0.75 0.16 204 / 0.3)",
-        "glow-lg": "0 0 40px oklch(0.75 0.16 204 / 0.25)",
-        card: "0 4px 24px oklch(0 0 0 / 0.3), inset 0 1px 0 oklch(1 0 0 / 0.05)",
+        "pixel": "3px 3px 0 oklch(0.22 0.035 265)",
+        "pixel-cyan": "3px 3px 0 oklch(0.78 0.18 195 / 0.5)",
+        "pixel-magenta": "3px 3px 0 oklch(0.65 0.25 335 / 0.5)",
+        "pixel-yellow": "3px 3px 0 oklch(0.90 0.20 95 / 0.5)",
+        "glow-cyan": "0 0 16px oklch(0.78 0.18 195 / 0.4)",
+        "glow-magenta": "0 0 16px oklch(0.65 0.25 335 / 0.4)",
       },
       keyframes: {
         "accordion-down": {
@@ -105,30 +105,10 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "float": {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-12px)" },
-        },
-        "pulse-glow": {
-          "0%, 100%": { opacity: "0.5" },
-          "50%": { opacity: "1" },
-        },
-        "data-flow": {
-          "0%": { strokeDashoffset: "200" },
-          "100%": { strokeDashoffset: "0" },
-        },
-        "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(24px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "float": "float 6s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
-        "data-flow": "data-flow 2s ease-in-out forwards",
-        "fade-up": "fade-up 0.6s ease-out forwards",
       },
     },
   },
